@@ -1,0 +1,223 @@
+/*
+=============== 
+Variables
+===============
+*/
+:root {
+  /* Colors */
+  --clr-primary: #5877BA;
+  --clr-white: #fff;
+  --clr-black: #272727;
+  /* Fonts*/
+  --ff-primary: "Poppins", sans-serif;
+  --ff-secondary: "Roboto", sans-serif;
+  /* Misc*/
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+
+/*
+==============
+Common Bootstrap
+==============
+*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.row {
+    margin: 0 -15px;
+    display:flex;
+    flex-wrap: wrap;
+}
+.row + .row {
+    margin-top: 15px;
+}
+[class*='col-'] {
+    padding: 0 15px;
+}
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.col-1 { flex: none; width: calc(100% * 1 / 12) }
+.col-2 { flex: none; width: calc(100% * 2 / 12) }
+.col-3 { flex: none; width: calc(100% * 3 / 12) }
+.col-4 { flex: none; width: calc(100% * 4 / 12) }
+.col-5 { flex: none; width: calc(100% * 5 / 12) }
+.col-6 { flex: none; width: calc(100% * 6 / 12) }
+.col-7 { flex: none; width: calc(100% * 7 / 12) }
+.col-8 { flex: none; width: calc(100% * 8 / 12) }
+.col-9 { flex: none; width: calc(100% * 9 / 12) }
+.col-10 { flex: none; width: calc(100% * 10 / 12) }
+.col-11 { flex: none; width: calc(100% * 11 / 12) }
+.col-12 { flex: none; width: calc(100% * 12 / 12) }
+
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 720px;
+    }
+    .col-md-1 { flex: none; width: calc(100% * 1 / 12) }
+    .col-md-2 { flex: none; width: calc(100% * 2 / 12) }
+    .col-md-3 { flex: none; width: calc(100% * 3 / 12) }
+    .col-md-4 { flex: none; width: calc(100% * 4 / 12) }
+    .col-md-5 { flex: none; width: calc(100% * 5 / 12) }
+    .col-md-6 { flex: none; width: calc(100% * 6 / 12) }
+    .col-md-7 { flex: none; width: calc(100% * 7 / 12) }
+    .col-md-8 { flex: none; width: calc(100% * 8 / 12) }
+    .col-md-9 { flex: none; width: calc(100% * 9 / 12) }
+    .col-md-10 { flex: none; width: calc(100% * 10 / 12) }
+    .col-md-11 { flex: none; width: calc(100% * 11 / 12) }
+    .col-md-12 { flex: none; width: calc(100% * 12 / 12) }
+}
+@media screen and (min-width: 992px) {
+    .container {
+        width: 960px;
+    }
+    .col-lg-1 { flex: none; width: calc(100% * 1 / 12) }
+    .col-lg-2 { flex: none; width: calc(100% * 2 / 12) }
+    .col-lg-3 { flex: none; width: calc(100% * 3 / 12) }
+    .col-lg-4 { flex: none; width: calc(100% * 4 / 12) }
+    .col-lg-5 { flex: none; width: calc(100% * 5 / 12) }
+    .col-lg-6 { flex: none; width: calc(100% * 6 / 12) }
+    .col-lg-7 { flex: none; width: calc(100% * 7 / 12) }
+    .col-lg-8 { flex: none; width: calc(100% * 8 / 12) }
+    .col-lg-9 { flex: none; width: calc(100% * 9 / 12) }
+    .col-lg-10 { flex: none; width: calc(100% * 10 / 12) }
+    .col-lg-11 { flex: none; width: calc(100% * 11 / 12) }
+    .col-lg-12 { flex: none; width: calc(100% * 12 / 12) }
+}
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 1140px;
+    }
+    .col-xl-1 { flex: none; width: calc(100% * 1 / 12) }
+    .col-xl-2 { flex: none; width: calc(100% * 2 / 12) }
+    .col-xl-3 { flex: none; width: calc(100% * 3 / 12) }
+    .col-xl-4 { flex: none; width: calc(100% * 4 / 12) }
+    .col-xl-5 { flex: none; width: calc(100% * 5 / 12) }
+    .col-xl-6 { flex: none; width: calc(100% * 6 / 12) }
+    .col-xl-7 { flex: none; width: calc(100% * 7 / 12) }
+    .col-xl-8 { flex: none; width: calc(100% * 8 / 12) }
+    .col-xl-9 { flex: none; width: calc(100% * 9 / 12) }
+    .col-xl-10 { flex: none; width: calc(100% * 10 / 12) }
+    .col-xl-11 { flex: none; width: calc(100% * 11 / 12) }
+    .col-xl-12 { flex: none; width: calc(100% * 12 / 12) }
+}
+
+
+/*
+=============== 
+Global Styles
+===============
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--clr-white);
+  color: var(--clr-black);
+
+  font-family: var(--ff-primary);
+  font-size: 0.875rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  min-height: 670px;
+}
+
+section .title {
+  text-align: center;
+}
+
+header {
+  background: url(../img/Mountain.jpg);
+  background-size: cover;
+  min-height: 670px;
+
+  color: var(--clr-white);
+}
+
+footer { text-align: center; }
+/*
+========
+Class Styles
+========
+*/
+
+.btn {
+  display: in
+  padding: 0.3rem 0.5rem;
+  border: 2px solid var(--clr-white);
+
+  text-transform: uppercase;
+  color: var(--clr-white);
+}
+
+.banner {
+  display: grid;
+  place-items: center;
+
+  height: 670px;
+
+  text-align: center;
+}
+
+
+/*
+========
+Scroll
+========
+*/
+nav {
+  background: var(--clr-white);
+  padding: 1rem;
+}
+
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--clr-white);
+  box-shadow: var(--light-shadow);
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--clr-primary);
+}
+
+.links-container {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.show-links {
+  height: 200px;
+}
+
+.top-link {
+  display: none;
+}
