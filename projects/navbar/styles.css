@@ -1,0 +1,187 @@
+/* CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+body {
+	font-family: "Montserrat", sans-serif;
+	padding-bottom: 1000px;
+}
+
+/* Navbar */
+nav {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100px;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;	
+
+	background-color: #fff;
+
+	transition: all .8s ease;
+}
+
+
+nav ul {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	width: 30%;
+}
+
+nav ul li a{
+	display: inline-block;
+
+	font-size: 0.9rem;
+	color: #272727;
+
+	text-decoration: none;
+}
+
+nav ul li a::after {
+	/* Fake border bottom for animation when hovered*/
+    content: '';
+    display: block;
+    margin: 5px auto;
+    width: 0;
+    height: 2px;
+
+    background: #5877BA;
+
+    transition: width .2s linear;
+}
+
+nav ul li a:hover::after{
+	width: 100%;
+}
+
+nav .logo a{
+	text-decoration: none;
+
+	font-family: "Poppins", sans-serif;
+	color: #5877BA;
+	font-size: 1.2rem;
+	letter-spacing: 8px
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+	position: relative;
+
+	display: none;
+	justify-content: space-between;
+	flex-direction: column;
+	height: 20px;
+}
+
+.menu-toggle input {
+	position: absolute;
+	left: -6px;
+	top: -3px;
+
+	width: 40px;
+	height: 28px;
+
+	opacity: 0;
+
+	cursor: pointer;
+}
+
+.menu-toggle span {
+	display: block;
+	width: 28px;
+	height: 3px;
+
+	background-color: #272727;
+	border-radius: 3px;
+
+	transition: all 0.5s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2){
+	/* Change Position of transform */
+	/*X Y*/
+	transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+	/* Change Position of transform */
+	/*X Y*/
+	transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+	background-color: #fff;
+	transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+	background-color: #fff;
+	transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+	opacity: 0;
+	transform: scale(0);
+}
+
+
+
+
+/* Responsive Breakpoint */
+
+/* Tablet size */
+@media screen and (max-width: 768px) {
+	nav ul {
+		width: 50%;
+	}
+}
+
+/* Mobile size */
+@media screen and (max-width: 576px) {
+	nav ul {
+		position: absolute;
+		z-index: -1;
+		right: 0;
+		top: 0;
+		height: 100vh;
+		width: 100%;
+
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		background-color: #272727;
+		
+		transform: translateY(-100%);
+		transition: all .5s ease;
+		opacity: 0;
+	}
+
+	nav ul li a{
+		margin-bottom: 40px;
+
+		color: white;
+	}
+
+	.menu-toggle {
+		display: flex;
+	}
+
+	nav ul.slide {
+		opacity: 1;
+		transform: translate(0);
+	}
+
+	nav.slide {
+		background-color: #272727;
+	}
+}
