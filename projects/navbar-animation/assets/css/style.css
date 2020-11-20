@@ -131,6 +131,32 @@ nav ul li a:hover::after{
   .nav-links li:nth-child(4) {
     transition: all 0.5s ease 0.8s;
   }
+
+.line {
+  transition: all 0.5s ease;
+}
+
+.line:nth-child(1) {
+  transform-origin: 0 0;
+}
+
+.line:nth-child(3) {
+  transform-origin: 0 100%;
+}
+
+.menu.open .line:nth-child(1) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.menu.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(3px, -2px);
+  }
+
+
   li.fade {
     opacity: 1;
   }
