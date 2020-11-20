@@ -4,6 +4,7 @@ const links = document.querySelectorAll(".nav-links li");
 
 menu.addEventListener("click", () => {
   navLinks.classList.toggle("open");
+  menu.classList.toggle("open");
   links.forEach(link => {
     link.classList.toggle("fade");
   });
